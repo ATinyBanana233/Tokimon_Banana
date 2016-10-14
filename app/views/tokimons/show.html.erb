@@ -1,0 +1,93 @@
+<body>
+<p id="notice"><%= notice %></p>
+
+  <% if !@tokimon.fly %>
+  <% @tokimon.fly = 0 %>
+  <% end %>
+
+  <% if !@tokimon.fight %>
+  <% @tokimon.fight = 0 %>
+  <% end %>
+
+  <% if !@tokimon.fire %>
+  <% @tokimon.fire = 0 %>
+  <% end %>
+
+  <% if !@tokimon.water %>
+  <% @tokimon.water = 0 %>
+  <% end %>
+
+  <% if !@tokimon.electric %>
+  <% @tokimon.electric = 0 %>
+  <% end %>
+
+  <% if !@tokimon.ice %>
+  <% @tokimon.ice = 0 %>
+  <% end %>
+
+
+  <% @tokimon.total = @tokimon.fly + @tokimon.fight + @tokimon.fire + @tokimon.water + @tokimon.electric + @tokimon.ice %>
+  <% @tokimon.save %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tokimon.name %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @tokimon.weight %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @tokimon.height %>
+</p>
+
+<p>
+  <strong>Fly:</strong>
+  <%= @tokimon.fly %>
+</p>
+
+<p>
+  <strong>Fight:</strong>
+  <%= @tokimon.fight %>
+</p>
+
+<p>
+  <strong>Fire:</strong>
+  <%= @tokimon.fire %>
+</p>
+
+<p>
+  <strong>Water:</strong>
+  <%= @tokimon.water %>
+</p>
+
+<p>
+  <strong>Electric:</strong>
+  <%= @tokimon.electric %>
+</p>
+
+<p>
+  <strong>Ice:</strong>
+  <%= @tokimon.ice %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @tokimon.total %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @tokimon.owner %>
+</p>
+
+
+
+<% trainer_id = Trainer.find(@tokimon.owner) %>
+<%= link_to "Owner", {:controller=>"trainers", :action=>"show", :id=>@tokimon.owner},  {:style=>'color: #f2f2f2;'} %>
+<%= link_to 'Edit', edit_tokimon_path(@tokimon), {:style=>'color: #f2f2f2;'} %> 
+<%= link_to 'Back', tokimons_path, {:style=>'color: #f2f2f2;'} %>
+</body>
