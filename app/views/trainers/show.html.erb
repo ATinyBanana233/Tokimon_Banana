@@ -21,20 +21,3 @@
   <%= @trainer.description %>
 </p>
 
-<%= link_to 'Edit', edit_trainer_path(@trainer), {:style=>'color: #f2f2f2;'} %> |
-<%= link_to 'Back', trainers_path, {:style=>'color: #f2f2f2;'} %>
-
-<% x = 0 %>
-<% lvl = 1 %>
-<% @trainer.tokimons.each do |tokimon| %>
-	<% if x < 2 %>
-		<% x = x + 1 %>
-	<% else %>
-		<% x = 0 %>
-		<% lvl = lvl + 1 %>
-	<% end %>
-<% end %>
-
-<% @trainer.tokimons.each do |tokimon| %>
-	<p><%= link_to "View Tokimons", tokimon %></p>
-<% end %>
