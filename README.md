@@ -11,7 +11,8 @@ CMPT 276 - Bei Bei Li - 301254625
 	level up function
 
 Comment:
-	Had trouble link trainer database with tokimon database because I forgot the common attribute trainer name. Instead, I used owner id. Due to time constraints and already implemented functions, I am unable to change it. 
+	It has trouble to link the trainer database with the tokimon database, as the common attribute trainer name is missed. 
+	An owner id is used instead of the trainer name. There will not be any changes due to time contastrants.
 
 	
 
